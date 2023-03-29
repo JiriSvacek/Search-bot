@@ -18,7 +18,6 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       </div>
 `
 
-
 const dataPromise = getData();
 export const dataArray = await dataPromise;
 
@@ -27,7 +26,7 @@ async function start(data: any) {
     showError(data[1],fieldDiv);
   } else {
     addSearchInput(document.querySelector<HTMLDivElement>("#search")!);
-    drawPeople("");
+    drawPeople();
   }
 }
 export const fieldDiv = document.querySelector<HTMLInputElement>("#field")!;

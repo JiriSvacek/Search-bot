@@ -1,4 +1,4 @@
-import { Person } from "./objects";
+import { Person, errorBlock, createElement } from "./objects";
 import { drawPeople } from "./people";
 
 export async function getData() {
@@ -17,23 +17,17 @@ export async function getData() {
 }
 
 export function addSearchInput(parElement: HTMLDivElement) {
-  let input = document.createElement("input");
-  input.setAttribute("type", "text");
-  input.setAttribute("class", "input is-primary");
-  input.setAttribute("placeholder", "Filter robots");
+  let input = createElement("input", {
+  type: "text",
+  className: "input is-primary",
+  placeholder: "Filter robots"
+  });
+  // @ts-ignore
   input.oninput = () => drawPeople(input.value);
   parElement.appendChild(input);
 }
 
 export function showError(message: string, field: HTMLInputElement) {
   field.style.display = "block";
-  field.innerHTML = getErrorBody(message);
-}
-
-function getErrorBody(message: string) {
-  return `<div class="column"></div>
-<div class="column">
-<div class="notification is-danger"><p>${message}</br>Please try it later!</p></div>
-</div>
-<div class="column"></div>`;
+  field.appendChild(errorBlock(message))
 }
