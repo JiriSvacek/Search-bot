@@ -11,6 +11,6 @@ export function drawPeople(filterString: string = "") {
 
 function filterPeople(filterString: string): any {
     if (filterString) {
-      return ((dataArray as readonly any[]) as Person[]).filter((per: Person) => per.name.includes(filterString))}
+      return ((dataArray as readonly any[]) as Person[]).filter((per: Person) => per.name.toLowerCase().includes(filterString.toLowerCase()))}
     return dataArray;
 };
