@@ -1,0 +1,21 @@
+html {
+  overflow-y: hidden;
+}
+#field {
+  height: 80vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1.5fr));
+  grid-gap: 1em;
+  overflow-y: auto;
+}
+.card {
+  max-height: 32rem;
+  transition: transform 0.5s ease;
+  border-radius: 0.5rem;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.is-6 {
+  padding-left: 0.15rem;
+}
