@@ -8,6 +8,14 @@ html {
   grid-gap: 1em;
   overflow-y: auto;
 }
+#footer {
+  position: fixed;
+  bottom: 0.25rem;
+  text-align: center;
+  display: inline-table;
+  font-weight: bold;
+  width: 80%;
+}
 .card {
   max-height: 32rem;
   transition: transform 0.5s ease;
